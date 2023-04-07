@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"  th:replace="~{fragments/layout :: layout(~{::title}, ~{::.main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>查看预约</title>
+</head>
+<body>
+<!--    通过-->
+
+
+    <div class="main">
+        <!--
+                  colgroup和col一般出现在表格当中
+                       定义表格单独列的任意属性
+                       col能覆盖colgroup定义的属性
+               -->
+        <table class="layui-table">
+            <colgroup>
+                <col width="150">
+                <col width="200">
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>预约编号</th>
+                <th>预约类型</th>
+                <th>预约时间</th>
+                <th>到场人数</th>
+                <th>联系人名字</th>
+                <th>联系人性别</th>
+                <th>联系人电话</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="mb : ${mblist}">
+                <td th:text="${mb.bookid}"></td>
+                <td th:text="${mb.booktype}"></td>
+                <td th:text="${mb.booktime}"></td>
+                <td th:text="${mb.turnout}"></td>
+                <td th:text="${mb.contactname}"></td>
+                <td th:text="${mb.contactsex}"></td>
+                <td th:text="${mb.contactphone}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

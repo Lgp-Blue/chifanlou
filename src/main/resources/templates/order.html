@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"  th:replace="~{fragments/layout :: layout(~{::title}, ~{::.main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>订单</title>
+</head>
+<body>
+<!--    通过-->
+
+
+    <div class="main">
+        <!--
+                  colgroup和col一般出现在表格当中
+                       定义表格单独列的任意属性
+                       col能覆盖colgroup定义的属性
+               -->
+        <table class="layui-table">
+            <colgroup>
+                <col width="150">
+                <col width="200">
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>订单价格</th>
+                <th>订单状态</th>
+                <th>下单时间</th>
+                <th>订单内容</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="mo : ${molist}">
+                <td th:text="${mo.orderid}"></td>
+                <td th:text="${mo.orderprice}"></td>
+                <td th:text="${mo.orderstate}"></td>
+                <td th:text="${mo.ordertime}"></td>
+                <td th:text="${mo.dishes}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

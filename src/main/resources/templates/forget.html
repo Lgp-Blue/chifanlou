@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/login.css" rel="stylesheet">
+    <script src="/js/jquery-1.12.4.js"></script>
+    <style type="text/css">
+        .back{
+            text-decoration: none;
+            display:block;
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 80px;
+            height: 20px;
+            background-color:#009688;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 3px;
+        }
+        .back:hover{
+            text-decoration: none;
+            display:block;
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 80px;
+            height: 20px;
+            background-color:#5FB878;
+            color: white;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+<body>
+<a href="/tologin" class="back">返回登录</a>
+<div class="body">
+    <form action="/check" method="post" name="注册" >
+        <table width="400PX" border="1px" cellspacing="0" cellpadding="0" class="tb_register" height="40px"
+               style="position:relative;">
+            <tr>
+                <td colspan="2"><h2>信息提交</h2></td>
+            </tr>
+            <tr>
+                <td>&nbsp;User id:</td>
+                <td><input type="text" placeholder="请输入用户名(必填)" name=mname></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit" class="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+    $(".submit").click(function(){alert("开始验证");})
+</script>
+</body>
+</html>

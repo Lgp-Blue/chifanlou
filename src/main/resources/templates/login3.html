@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/login.css" rel="stylesheet">
+</head>
+<body>
+<div class="body">
+    <form action="/login" method="post" name="登录" >
+        <table width="400PX" border="1px" cellspacing="0" cellpadding="0" class="tb_register" height="40px"
+               style="position:relative;">
+            <tr>
+                <td colspan="2"><h2>用户登录</h2></td>
+            </tr>
+            <tr>
+                <td>&nbsp;User id:</td>
+                <td><input type="text" placeholder="请输入用户名(必填)" name=mname></td>
+            </tr>
+            <tr>
+                <td>&nbsp;Password:</td>
+                <td><input type="password" placeholder="请输入密码(必填)" name=password></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit" class="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <a href="/toForget" class="forget">忘记密码</a>
+    <a href="/toregister" class="forget">注册账号</a>
+</div>
+
+</body>
+</html>

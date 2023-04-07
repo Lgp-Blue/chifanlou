@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/layui/css/layui.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form class="layui-form" method="post" action="doEmailCheck">
+    <div class="layui-form-item">
+        <label class="layui-form-label">验证码</label>
+        <div class="layui-input-block">
+            <input type="text" name="code" required placeholder="请输入您收到的验证码" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-col-md-offset6">
+        <button class="layui-btn" type="submit">立即提交</button>
+    </div>
+</form>
+</body>
+</html>

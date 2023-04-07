@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/register.css" rel="stylesheet">
+    <script src="/js/jquery-1.12.4.js">
+    </script>
+    <style type="text/css">
+        .back{
+            text-decoration: none;
+            display:block;
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 80px;
+            height: 20px;
+            background-color:#009688;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 3px;
+        }
+        .back:hover{
+            text-decoration: none;
+            display:block;
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 80px;
+            height: 20px;
+            background-color:#5FB878;
+            color: white;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+
+<body>
+<a href="/tologin" class="back">返回登录</a>
+<div class="body">
+    <form action="/insert" method="post" name="注册" >
+        <table width="900PX" border="1px" cellspacing="0" cellpadding="0" class="tb_register" height="40px">
+            <tr>
+                <td colspan="2"><h2>用户注册</h2></td>
+            </tr>
+            <tr>
+                <td class="one">&nbsp;用户名:</td>
+                <td><input type="text" placeholder="请输入用户名(必填)" name=mname id=mname></td>
+            </tr>
+            <tr>
+                <td class="one">&nbsp;密码:</td>
+                <td><input type="text" placeholder="请输入密码(必填)" name=password></td>
+            </tr>
+            <tr>
+                <td class="one">&nbsp;电子邮箱:</td>
+                <td><input type="email" placeholder="请输入电子邮箱(必填)" name=email></td>
+            </tr>
+            <tr>
+                <td class="one">&nbsp;手机号码:</td>
+                <td><input type="text" placeholder="请输入电话号" name=phone></td>
+            </tr>
+            <tr>
+                <td>&nbsp;性别</td>
+                <td class="sex">
+             <span>
+                <input type="radio" name="gender" id="nan" value="男" checked />男
+             </span>
+                    <span><input type="radio" name="gender" id="nv" value="女"/>女
+                </span>
+                    <span>
+                    <input type="radio" name="gender" id="bm" value="保密"/>保密
+                </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>验证码</td>
+
+                <td id="check">&nbsp;<input name="code" type="text" placeholder="请输入验证码"
+                                            size="8" maxlength="4" />
+                    <img src="/checkcode" id="checkCode" align="middle">
+                    <div id="change">看不清</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit" class="submit">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+</body>
+
+
+
+
+<script>
+
+    $('#mname').blur(function(){
+        var mname=$('#mname').val()
+        $.ajax({
+            url:"/checkname",
+            type:"POST",
+            data:'{"mname":'+mname+'}',//必须为字符串
+            contentType:"application/json;charset=UTF-8",
+            dataType:"json",
+            success:function(data){
+                //alert(data.isExist);
+                console.log(data.exist);
+                if(data.exist=="1"){
+                    alert("用户名重复");
+                    $('#mname').val("")
+                }
+            }
+        });
+    })
+
+
+    $("#change").click(function(){
+        document.getElementById("checkCode").src = document
+                .getElementById("checkCode").src
+            + "?nocache=" + new Date().getTime();
+    })
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments/layout :: layout(~{::title}, ~{::.main})}">
+<head>
+    <title>首页</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+</head>
+<body>
+    <div class="main">
+        <!-- 主页 -->
+        <main-page>
+            <header>
+                <h1>备忘录</h1>
+                <button id="editList" type="button" disabled>编辑</button>
+                <button id="cancelEdit" type="button">取消</button>
+            </header>
+            <main>
+                <ul id="memoireList"></ul>
+            </main>
+            <footer>
+                <h2>无备忘录</h2>
+                <button id="addMemoire" type="button" class="rightBtn"></button>
+                <button id="deleteCkdItem" type="button" class="rightBtn">删除</button>
+            </footer>
+        </main-page>
+
+        <!-- 编辑页 -->
+        <edit-page>
+            <header>
+                <button id="backMainPage" type="button" class="leftBtn">
+                    <i></i>
+                    <span>备忘录</span>
+                </button>
+                <button id="saveMemoire" type="button" class="rightBtn" disabled>保存</button>
+            </header>
+            <main>
+                <textarea id="memoireContent" spellcheck="false"></textarea>
+            </main>
+            <footer>
+                <button id="enableEdit" type="button" class="rightBtn"></button>
+            </footer>
+        </edit-page>
+
+    </div>
+</body>
+</html>

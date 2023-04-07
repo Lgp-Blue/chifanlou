@@ -1,0 +1,68 @@
+*{
+    margin:0;
+    padding:0;}
+.body{
+    width: auto;
+    margin: 100px auto 0 auto;
+    height: auto;
+}
+.body h2{
+    text-align:center;}
+.body form{
+    margin: 10px auto 10px auto;
+    width: 900px;
+}
+.body form td{
+    height:30px;
+}
+.body form td>input{
+    height:30px;
+    width:100%;
+}
+.sex span{
+    float: left;
+    margin-left: 10px;
+}
+.body .submit{
+    display:inline-block;
+    width:100%;}
+
+tr:last-child{
+    height: 30px;
+}
+tr:last-child input{
+    height: 100%;
+}
+.submit{
+    background-color:#009688;
+}
+.submit:hover{
+    background-color:#5FB878;
+}
+#message{
+    margin-left:400px
+}
+#check{
+    padding:0px;
+}
+#check input{
+    width:120px;
+}
+#change{
+    width:50px;
+    height:20px;
+    margin-top:10px;
+    display:inline-block;
+    font-size:16px;
+    text-decoration: underline;
+    color: blueviolet;
+}
+#change:hover{
+    width:50px;
+    height:20px;
+    margin-top:10px;
+    display:inline-block;
+    font-size:16px;
+    text-decoration: underline;
+    color: chocolate;
+}

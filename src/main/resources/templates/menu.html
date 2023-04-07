@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"  th:replace="~{fragments/layout :: layout(~{::title}, ~{::.main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>菜品展示</title>
+</head>
+<body>
+<!--    通过-->
+
+
+    <div class="main">
+        <!--
+                  colgroup和col一般出现在表格当中
+                       定义表格单独列的任意属性
+                       col能覆盖colgroup定义的属性
+               -->
+        <table class="layui-table">
+            <colgroup>
+                <col width="150">
+                <col width="200">
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>菜品编号</th>
+                <th>菜品名称</th>
+                <th>菜品口味</th>
+                <th>菜品折扣</th>
+                <th>菜品价格</th>
+                <th>菜品图片</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="d : ${dishes}">
+                <td th:text="${d.dishid}"></td>
+                <td th:text="${d.dishname}"></td>
+                <td th:text="${d.dishflavor}"></td>
+                <td th:text="${d.dishdiscount}+'折'"></td>
+                <td th:text="${d.dishprice}"></td>
+                <td><image th:src="@{${d.dishplay}}"></image></td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="height: 50px"></div>
+    </div>
+</body>
+</html>

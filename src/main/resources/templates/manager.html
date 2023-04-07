@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link href="/css/manager.css" rel="stylesheet">
+<script src="/js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<a href="/index" class="back">返回首页</a>
+    <div class="choice">
+        <a class="sign_in" href="/tologin">登录</a>
+            <a class="sign_out" href="/toExit">退出</a>
+            <a class="register" href="/toregister">注册</a>
+            <a class="change_password" href="/toForget">忘记密码</a>
+    </div>
+
+    <script>
+        $(".choice").css({
+            left:($(window).width()-$(".choice").outerWidth())/2,
+            top:($(window).height()-$(".choice").outerHeight())/2,
+            width:200,
+            height:320,
+        })
+        $(".choice>a").hover(function(){
+                $(this).css({
+                    color:"yellow",
+                    borderColor:"yellow"
+                })},
+            function(){
+                $(this).css({
+                    color:"black",
+                    borderColor:"white"
+                })
+            })
+</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{fragments/layout :: layout(~{::title}, ~{::.main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>添加菜品</title>
+
+</head>
+<body>
+
+<div class="main">
+    <form class="layui-form" method="post" action="/doinsertdish" enctype="multipart/form-data" name="insertdish">
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜品名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="dishname" id="dishname" required placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜品口味</label>
+            <div class="layui-input-block">
+                <input type="text" name="dishflavor" id="dishflavor" required placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜品价格</label>
+            <div class="layui-input-block">
+                <input type="text" name="dishprice" required placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜品折扣</label>
+            <div class="layui-input-block">
+                <input type="text" name="dishdiscount" required placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜品图片</label>
+            <div class="layui-input-block">
+                <input type="file" name="dishplay" required  class="layui-btn"  value="上传文件" id="targetFile">
+<!--                    <button type="button" class="layui-btn" id="test1" name="dishplay">上传图片</button>-->
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <button class="layui-btn"  id="insert_dish_submit">立即提交</button>
+        </div>
+    </form>
+
+</div>
+
+</body>
+
+</html>
